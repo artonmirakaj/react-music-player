@@ -1,9 +1,12 @@
+import Player from "./components/Player";
+import Song from "./components/Song";
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Music Player</h1>
-      <h2>Waves music</h2>
+      <Song />
+      <Player />
     </div>
   );
 }
