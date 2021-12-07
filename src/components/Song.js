@@ -3,7 +3,7 @@
 import React from 'react';
 
 const Song = (props) => {
-  console.log(props)
+  // console.log(props)
   return (
     <div className='song-container'>
       <img src={props.currentSong.cover} />
