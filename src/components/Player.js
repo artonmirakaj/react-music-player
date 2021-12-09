@@ -7,8 +7,8 @@ const Player = (props) => {
   const audioRef = useRef(null);
 
   const [songInfo, setSongInfo] = useState({
-    currentTime: null,
-    currentDuration: null
+    currentTime: 0,
+    currentDuration: 0
   });
 
   const timeUpdateHandler = (e) => {
