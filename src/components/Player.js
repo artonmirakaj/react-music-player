@@ -37,7 +37,7 @@ const Player = (props) => {
   }
 
   const dragHandler = (e) => {
-    // console.log(e.tareget.value)
+    // console.log(e.target.value)
     audioRef.current.currentTime = e.target.value;
     setSongInfo({...songInfo, currentTime: e.target.value })
   }
