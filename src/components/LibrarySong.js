@@ -1,15 +1,19 @@
 // shows the song, name, artist, and picture
-
 import React from 'react';
 
-const LibrarySong = (props) => {
-  // console.log(props)
+const LibrarySong = ({ song, songs, setCurrentSong, id }) => {
+  
+  const songSelectHandler = () => {
+    const selectedSong = songs.filter((state) => state.id === id);
+    setCurrentSong(selectedSong[0]);
+  }
+
   return (
-    <div className='library-song'>
-      <img src={props.song.cover} alt={props.song.name} />
+    <div onClick={songSelectHandler} className='library-song'>
+      <img src={song.cover} alt={song.name} />
       <div className='song-description'>
-        <h3>{props.song.name}</h3>
-        <h4>{props.song.artist}</h4>
+        <h3>{song.name}</h3>
+        <h4>{song.artist}</h4>
       </div>
     </div>
   )
