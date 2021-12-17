@@ -1,5 +1,6 @@
 // shows the song, name, artist, and picture
 import React from 'react';
+import { playAudio } from '../util';
 
 const LibrarySong = ({ song, songs, setCurrentSong, id, audioRef, isPlaying, setSongs }) => {
   const songSelectHandler = () => {
@@ -19,15 +20,7 @@ const LibrarySong = ({ song, songs, setCurrentSong, id, audioRef, isPlaying, set
       }
     })
     setSongs(newSongs);
-
-    if (isPlaying) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          audioRef.current.play();
-        })
-      }
-    }
+    playAudio(isPlaying, audioRef);
   }
 
   return (
